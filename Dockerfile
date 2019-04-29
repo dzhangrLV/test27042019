@@ -18,10 +18,10 @@ RUN set -e; \
 
 #RUN git clone "https://github.com/dzhangrLV/test27042019.git"
 #COPY /tmp/test27042019/requirements.txt /tmp/requirements.txt
-RUN pip install -qr /tmp/requirements.txt && rm -rf /var/lib/apt/lists/*
+RUN pip install -qr /tmp/requirements.txt
 
 WORKDIR $WEBAPP
-COPY $TEST_DIR/test27042019/* $WEBAPP
+COPY /tmp/TEST_DIR/test27042019/* /opt/webapp/
 
 EXPOSE 5000
 CMD ["python", "app.py"]
