@@ -9,8 +9,15 @@ WORKDIR $TEST_DIR
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q git python-all python-pip
-RUN git clone "https://github.com/dzhangrLV/test27042019.git"
-COPY /tmp/test27042019/requirements.txt /tmp/requirements.txt
+
+RUN set -e; \
+    \
+    git clone "https://github.com/dzhangrLV/test27042019.git"; \
+    cd "$TEST_DIR/test27042019/"; \
+    COPY requirements.txt /tmp/requirements.txt
+
+#RUN git clone "https://github.com/dzhangrLV/test27042019.git"
+#COPY /tmp/test27042019/requirements.txt /tmp/requirements.txt
 RUN pip install -qr /tmp/requirements.txt && rm -rf /var/lib/apt/lists/*
 
 WORKDIR $WEBAPP
