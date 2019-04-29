@@ -10,7 +10,7 @@ WORKDIR $TEST_DIR
 RUN apt-get update
 RUN git clone "https://github.com/dzhangrLV/test27042019.git"
 COPY $TEST_DIR/test27042019/requirements.txt /tmp/requirements.txt
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip && pip install -qr /tmp/requirements.txt && rm -rf /var/lib/apt/lists/*
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q git python-all python-pip && pip install -qr /tmp/requirements.txt && rm -rf /var/lib/apt/lists/*
 
 
 WORKDIR $WEBAPP
