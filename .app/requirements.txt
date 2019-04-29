@@ -1,5 +1,5 @@
 Flask
-Jinja2
+Jinja2>=2.6
 Werkzeug
 distribute
 wsgiref
