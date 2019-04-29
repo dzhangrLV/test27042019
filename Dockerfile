@@ -12,7 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q git python-all python-p
 
 ADD .app/requirements.txt /tmp/requirements.txt
 
-RUN pip install -qr /tmp/requirements.txt
+RUN pip install -q /tmp/requirements.txt
 
 WORKDIR $WEBAPP
 ADD .app/* /opt/webapp/
