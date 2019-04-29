@@ -14,7 +14,7 @@ RUN set -e; \
     \
     git clone "https://github.com/dzhangrLV/test27042019.git"; \
     cd "$TEST_DIR/test27042019/"; \
-    COPY requirements.txt /tmp/requirements.txt
+    cp requirements.txt /tmp/requirements.txt
 
 #RUN git clone "https://github.com/dzhangrLV/test27042019.git"
 #COPY /tmp/test27042019/requirements.txt /tmp/requirements.txt
