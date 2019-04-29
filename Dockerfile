@@ -13,7 +13,7 @@ COPY $TEST_DIR/test27042019/requirements.txt /tmp/requirements.txt
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip && pip install -qr /tmp/requirements.txt && rm -rf /var/lib/apt/lists/*
 
 
-#WORKDIR $WEBAPP
+WORKDIR $WEBAPP
 COPY $TEST_DIR/test27042019/* $WEBAPP
 
 EXPOSE 5000
